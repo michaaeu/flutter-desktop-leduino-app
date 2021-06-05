@@ -41,6 +41,7 @@ class _MyAppState extends State<MyApp> {
     // printAvailablePorts();
     selectPort();
     openPort();
+    // setListener();
   }
 
   void initPorts() {
@@ -225,7 +226,9 @@ void sendData(String cmd) {
 
   port.write(bytes);
   print('Sent: ${String.fromCharCodes(bytes)}');
+}
 
+void setListener() {
   final reader = SerialPortReader(port);
   reader.stream.listen((data) {
     final received = String.fromCharCodes(data);
