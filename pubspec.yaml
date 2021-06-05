@@ -1,0 +1,28 @@
+name: leduino
+description: LEDuino project / flutter-desktop.
+
+environment:
+  sdk: '>=2.12.0-0 <3.0.0'
+  flutter: '>=1.22.0-10.0.pre'
+
+dependencies:
+  bitsdojo_window: ^0.1.0+1
+  flutter:
+    sdk: flutter
+
+  # FDE plugins.
+  # Note: In an actual project, these would be included via 'git:' reference,
+  # rather than 'path:', as described in the plugins README.
+  libserialport: ^0.2.0+2
+  menubar:
+    path: ../plugins/menubar
+  msix: ^2.1.2
+  window_size:
+    path: ../plugins/window_size
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
