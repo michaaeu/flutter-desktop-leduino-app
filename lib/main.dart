@@ -83,11 +83,25 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Row(
-          children: [
-            LeftSide(),
-            RightSide(),
-          ],
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    LeftSide(),
+                    RightSide(),
+                  ],
+                ),
+              ),
+              Container(
+                height: 1,
+                color: Colors.blue,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -239,21 +253,31 @@ class RightSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-        child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [backgroundStartColor, backgroundEndColor],
-                  stops: [0.0, 1.0]),
-            ),
-            child: Column(children: [
-              WindowTitleBarBox(
-                  child: Row(children: [
-                Expanded(child: MoveWindow()),
-                WindowButtons()
-              ])),
-            ])));
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [backgroundStartColor, backgroundEndColor],
+              stops: [0.0, 1.0]),
+        ),
+        child: Column(
+          children: [
+            WindowTitleBarBox(
+                child: Row(children: [
+              Expanded(child: MoveWindow()),
+              WindowButtons()
+            ])),
+            Expanded(child: Container()),
+            // Container(
+            //   width: double.infinity,
+            //   height: 2,
+            //   color: Colors.blue,
+            // )
+          ],
+        ),
+      ),
+    );
   }
 }
 
