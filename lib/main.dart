@@ -83,15 +83,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: WindowBorder(
-          color: borderColor,
-          width: 1,
-          child: Row(
-            children: [
-              LeftSide(),
-              RightSide(),
-            ],
-          ),
+        body: Row(
+          children: [
+            LeftSide(),
+            RightSide(),
+          ],
         ),
       ),
     );
