@@ -13,6 +13,7 @@ dependencies:
   # FDE plugins.
   # Note: In an actual project, these would be included via 'git:' reference,
   # rather than 'path:', as described in the plugins README.
+  google_fonts: ^2.1.0
   libserialport: ^0.2.0+2
   menubar:
     path: ../plugins/menubar

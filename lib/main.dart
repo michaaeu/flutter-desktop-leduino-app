@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:libserialport/libserialport.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -138,11 +139,12 @@ class LeftSide extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10.0, top: 5.0),
                       child: Text(
                         'LEDuino',
-                        style: TextStyle(
-                          color: Colors.white70,
+                        style: GoogleFonts.getFont(
+                          'Dancing Script',
+                          color: Color(0xFF1DA1F2),
                           fontStyle: FontStyle.italic,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 20,
                         ),
                       ),
                     ),
@@ -196,17 +198,17 @@ class LeftSide extends StatelessWidget {
               'digitalrgb',
             ), // colors: 0
             Expanded(child: Container()),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'v0.1',
-                style: TextStyle(
-                  color: Color(0xFF1DA1F2),
-                  fontStyle: FontStyle.italic,
-                  fontSize: 12,
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Text(
+            //     'v0.1',
+            //     style: TextStyle(
+            //       color: Color(0xFF1DA1F2),
+            //       fontStyle: FontStyle.italic,
+            //       fontSize: 12,
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -221,7 +223,8 @@ Widget OptButton(String btnText, String cmd) {
     },
     child: Text(
       btnText,
-      style: TextStyle(
+      style: GoogleFonts.getFont(
+        'Roboto',
         fontSize: 16,
         color: Color(0xFF1DA1F2),
         fontWeight: FontWeight.normal,
